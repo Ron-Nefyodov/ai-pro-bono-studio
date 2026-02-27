@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pro Bono Studio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel intro">
+        <p class="label">Prompt -> Agents -> Running POC</p>
+        <h1>AI Pro Bono Studio</h1>
+        <p>
+          Write what you want to build. Agents validate business logic and generate a live prototype.
+        </p>
+      </section>
+
+      <section class="panel">
+        <form id="ideaForm">
+          <label>
+            Founder name
+            <input id="founderName" name="founderName" placeholder="Your name" />
+          </label>
+
+          <label>
+            Email
+            <input id="email" name="email" type="email" placeholder="you@company.com" />
+          </label>
+
+          <label>
+            Target user
+            <input id="targetUser" name="targetUser" placeholder="Who is this for?" />
+          </label>
+
+          <label>
+            What should we build?
+            <textarea
+              id="idea"
+              name="idea"
+              rows="6"
+              placeholder="Example: Build an AI assistant for solo lawyers to summarize contracts, track deadlines, and draft first-pass replies to clients."
+              required
+            ></textarea>
+          </label>
+
+          <button type="submit" id="submitBtn">Run Agents and Build POC</button>
+        </form>
+      </section>
+
+      <section class="panel" id="statusPanel">
+        <h2>Pipeline Progress</h2>
+        <div class="progress-wrap">
+          <div class="progress-track">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="progress-meta">
+            <span id="progressPercent">0%</span>
+            <span id="progressStage">Idle</span>
+          </div>
+        </div>
+        <div id="stageChips" class="stage-chips"></div>
+      </section>
+
+      <section class="panel hidden" id="resultPanel">
+        <h2>Decision</h2>
+        <p id="decisionText"></p>
+        <p id="reasonText"></p>
+        <div id="agentCards" class="agent-cards"></div>
+      </section>
+
+      <section class="panel hidden" id="blockedPanel">
+        <h2>Blocked? Challenge It</h2>
+        <p>
+          If you disagree with the agent decision, submit your argument. We re-run the pipeline with your
+          additional context.
+        </p>
+        <label>
+          Your argument
+          <textarea id="appealText" rows="4" placeholder="Why this idea should still pass"></textarea>
+        </label>
+        <p class="token-budget">
+          Token budget:
+          <strong id="tokenBudget">220</strong>
+          | Used:
+          <strong id="tokenUsed">0</strong>
+          | Left:
+          <strong id="tokenLeft">220</strong>
+        </p>
+        <div class="actions">
+          <button id="appealBtn" type="button">Submit appeal</button>
+          <button id="paidBtn" type="button" class="secondary">Request paid build</button>
+        </div>
+        <p id="blockedMsg"></p>
+      </section>
+
+      <section class="panel hidden" id="pocPanel">
+        <h2>Running POC</h2>
+        <p id="pocTitle"></p>
+        <iframe id="pocFrame" title="Generated POC"></iframe>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

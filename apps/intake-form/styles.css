@@ -1,0 +1,113 @@
+:root {
+  --bg: #f4efe6;
+  --paper: #fffaf0;
+  --ink: #1b1f24;
+  --accent: #0e8f6a;
+  --accent-ink: #085f47;
+  --border: #d6ccb8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #fff8e6, var(--bg));
+  color: var(--ink);
+}
+
+.page {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.eyebrow {
+  color: var(--accent-ink);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 8px 0;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+button {
+  border: none;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0a7c5b;
+}
+
+pre {
+  background: #f7f2e8;
+  border-radius: 10px;
+  padding: 12px;
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Pro Bono Studio Intake</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="intro card">
+        <p class="eyebrow">Pilot Intake</p>
+        <h1>AI Pro Bono Studio</h1>
+        <p>
+          Submit one startup idea. This form generates a first-pass viability
+          score and stores the submission in your browser.
+        </p>
+      </section>
+
+      <section class="card">
+        <form id="intakeForm" novalidate>
+          <div class="field">
+            <label for="founderName">Founder name</label>
+            <input id="founderName" name="founderName" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="field">
+            <label for="ideaName">Idea name</label>
+            <input id="ideaName" name="ideaName" required />
+          </div>
+
+          <div class="field">
+            <label for="problem">Problem statement</label>
+            <textarea id="problem" name="problem" rows="3" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="targetCustomer">Target customer</label>
+            <input id="targetCustomer" name="targetCustomer" required />
+          </div>
+
+          <div class="field">
+            <label for="solution">Solution summary</label>
+            <textarea id="solution" name="solution" rows="3" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="distribution">Planned distribution channel</label>
+            <input id="distribution" name="distribution" required />
+          </div>
+
+          <div class="field">
+            <label for="pricingModel">Pricing model</label>
+            <select id="pricingModel" name="pricingModel" required>
+              <option value="">Select one</option>
+              <option value="subscription">Subscription</option>
+              <option value="transaction">Transaction fee</option>
+              <option value="one-time">One-time payment</option>
+              <option value="ads">Advertising</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label for="urgency">Problem urgency (1-5)</label>
+              <input
+                id="urgency"
+                name="urgency"
+                type="number"
+                min="1"
+                max="5"
+                value="3"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="willingnessToPay">Willingness to pay (1-5)</label>
+              <input
+                id="willingnessToPay"
+                name="willingnessToPay"
+                type="number"
+                min="1"
+                max="5"
+                value="3"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="executionConfidence">Execution confidence (1-5)</label>
+              <input
+                id="executionConfidence"
+                name="executionConfidence"
+                type="number"
+                min="1"
+                max="5"
+                value="3"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit">Submit for evaluation</button>
+        </form>
+      </section>
+
+      <section class="card hidden" id="resultCard">
+        <h2>Submission Result</h2>
+        <p id="decisionText"></p>
+        <p id="scoreText"></p>
+        <pre id="payloadView"></pre>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
